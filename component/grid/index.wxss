@@ -1,0 +1,4 @@
+.i-grid{
+  overflow:hidden;
+  border-radius: 8px;
+  }

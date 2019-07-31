@@ -1,0 +1,70 @@
+<i-message id="message"></i-message>
+<view class="goods-container">
+  <form bindsubmit="handleAddGoods">
+    <view class="content_scroll">
+      <view class="list">
+        <view class="list-text">产品图片</view>
+        <view bindtap="choose_image" class="list-add-up" style="display:{{icon}}">
+          <i class="iconfont icon-fenxiang-copy icon-upload"></i>
+        </view>
+        <view class="list-add" style="display:{{image}}">
+          <image bindtap="choose_image" src="{{temppath}}" style="width:50px;height:50px"></image>
+        </view>
+      </view>
+      <i-panel title="基本信息（产品名称必填）">
+        <i-input name="goodsName" placeholder="请输入产品名称" title="产品名称" value="{{goodsName}}"></i-input>
+        <i-input name="regNumber" placeholder="请输入登记编号" title="登记编号" value="{{regNumber}}"></i-input>
+        <navigator openType="navigate" url="/pages/second/choose_producer/choose_producer">
+          <i-input disabled="true" name="producer" placeholder="请输入生产厂家" title="生产厂家" value="{{producer}}"></i-input>
+        </navigator>
+        <i-input name="position" placeholder="请输入存放的货架编号" title="货架编号" value="{{position}}"></i-input>
+        <i-input name="productCode" placeholder="已知产品条码输入已知的，未知则自动生成" title="产品条码" value="{{productCode}}"></i-input>
+      </i-panel>
+      <i-panel title="产品类别（可在 我的->产品类别 里添加）">
+        <navigator hoverClass="none" openType="navigate" url="/pages/mine/add_class/add_class?type=select">
+          <i-input disabled="true" name="goodsClass" placeholder="请选择产品类别" title="产品类别" value="{{class_select_text}}"></i-input>
+        </navigator>
+      </i-panel>
+      <i-panel title="产品规格">
+        <i-input name="packageContent" placeholder="请输入包装含量" title="包装含量" value="{{packageContent}}"></i-input>
+        <i-input name="packingUnit" placeholder="请填写包装单位" title="包装单位" value="{{packingUnit}}"></i-input>
+      </i-panel>
+      <i-panel title="产品价格（必填，可以为0）">
+        <i-input name="costPrice" placeholder="请输入进货价格" title="进货价格" type="digit" value="{{costPrice}}"></i-input>
+        <i-input name="retailPrice" placeholder="请选择零售价格" title="零售价格" type="digit" value="{{retailPrice}}"></i-input>
+      </i-panel>
+      <navigator openType="navigate" url="/pages/second/choose_stock/choose_stock">
+        <i-panel title="存放仓库">
+          <i-input disabled="true" name="stock" placeholder="请选择存放仓库" title="存放仓库" value="{{stock}}"></i-input>
+        </i-panel>
+      </navigator>
+      <i-panel title="现有库存">
+        <i-input name="reserve" placeholder="请输入现有库存" title="现有库存" type="digit" value="{{reserve}}"></i-input>
+      </i-panel>
+      <view class="caption-wrap">
+        <i-collapse name="{{name}}">
+          <i-collapse-item iClassTitle="collapse-item-title" name="name1" title="更多信息">
+            <view slot="content">
+              <i-input maxlength="100" name="warning_num" placeholder="请输入库存预警数量" title="库存预警" type="number" value="{{warning_num}}"></i-input>
+              <i-input maxlength="100" name="product_info" placeholder="请输入商品简介" title="商品简介" type="text" value="{{product_info}}"></i-input>
+              <picker bindchange="select_producttime" fields="day" mode="date">
+                <i-input disabled="true" name="producttime" placeholder="请选择产品生产日期" title="生产日期" value="{{producttime}}"></i-input>
+              </picker>
+              <picker bindchange="select_nousetime" fields="day" mode="date">
+                <i-input disabled="true" name="nousetime" placeholder="请选择产品失效日期" title="失效日期" value="{{nousetime}}"></i-input>
+              </picker>
+            </view>
+          </i-collapse-item>
+        </i-collapse>
+      </view>
+    </view>
+    <view class="btn-group">
+      <button class="i-btn i-btn-primary i-btn-small" formType="submit" wx:if="{{!loading}}">
+        <i-icon type="add"></i-icon> 确认新增
+      </button>
+      <i-button loading="true" size="small" type="primary" wx:if="{{loading}}">
+        上传中
+      </i-button>
+    </view>
+  </form>
+</view>

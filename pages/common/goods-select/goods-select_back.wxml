@@ -1,0 +1,75 @@
+<!--pages/common/goods-select/goods-select.wxml-->
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+<i-message id="message" />
+<!--搜索-->
+
+<view class='no-data' wx:if="{{isEmpty}}">
+  <image src='/images/common/no-data.png'></image>
+  <text>暂无数据</text>
+</view>
+
+<view wx:else>
+<view class="search-view">
+  <view class="search-bar">
+    <view class="search-bar-form">
+      <view class="search-bar-box">
+        <icon class="icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="search-bar-input" placeholder="请输入关键字查询" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchAction"/>
+        <view class="icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="search-bar-label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="icon-search" type="search" size="14"></icon>
+        <view class="search-bar-text">搜索</view>
+      </label>
+    </view>
+    <view class="search-bar-cancel-btn" hidden="{{!inputShowed}}" bindtap="searchAction">搜索</view>
+  </view>
+</view>
+<!--/.搜索-->
+
+<!--*筛选器*-->
+  <view class='select'>
+    <view class="section">
+      <picker bindchange="bindclass_Change" range-key	="class_text" range="{{all_class}}">
+        <view class="picker">
+          <text>{{selectd_class}}</text>
+          <i class="icon iconfont icon-xiangxia1" style="margin-left:8px;font-size:14px"></i>
+        </view>
+      </picker>
+    </view>
+
+    <view class="section">
+      <picker bindchange="bindstock_Change" value="{{index}}" range="{{stock}}">
+        <view class="picker">
+          <text>{{selectd_stock}}</text>
+          <i class="icon iconfont icon-xiangxia1" style="margin-left:8px;font-size:14px"></i>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+<view style='display:flex'>
+
+  <view class='no-data' wx:if="{{contentEmpty}}" style='height:calc(100vh - 158px)'>
+    <image src='/images/common/no-data.png'></image>
+    <text>暂无数据</text>
+  </view>
+
+  <scroll-view wx:else class='wrap_overflow' scroll-y="true" bindscrolltolower = "loadMore" lower-threshold="0">
+    <i-checkbox-group current="{{current}}" bindchange="handleCheckChange">
+      <i-checkbox wx:for="{{goods}}" another_value="产品：{{item.goodsName}}" extra_value="当前库存：{{item.reserve}}" value="{{item.goodsName}}" wx:key="{{item.goodsId}}">
+      </i-checkbox>
+    </i-checkbox-group>
+  </scroll-view>
+
+</view>
+
+  <view class='btn-group' bindtap='link2page'>
+    <button class='i-btn i-btn-primary i-btn-small' form-type="submit" wx:if="{{!loading}}">
+      确认选择
+    </button>
+  </view>
+
+</view>

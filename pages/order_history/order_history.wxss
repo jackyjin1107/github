@@ -1,0 +1,59 @@
+.page
+{
+  overflow: hidden;
+}
+.item
+{
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.icon-order
+{
+  font-size: 22px;
+  color: #118fff;
+}
+.list-item
+{
+  height: calc(100vh - 132px);
+  overflow: scroll;
+}
+
+.select_time
+{
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
+  color: #999;
+  padding: 0 15px;
+}
+.item_beizhu
+{
+  max-width: calc(100% - 60px);
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.order_counting
+{
+   padding: 0px 15px;
+  color: #000;
+  border:1px solid#000;
+  height: 26px;
+  line-height: 26px;
+  margin-top: 7px;
+  border-radius: 4px;
+}
+
+.order_returning
+{
+   padding: 0px 15px;
+  color: #ffd800;
+  border:1px solid#ffd800;
+  height: 26px;
+  line-height: 26px;
+  margin-top: 7px;
+  border-radius: 4px;
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTitleText": "daoju ",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "i-panel": "../../component/panel/index",
+    "i-input": "../../component/input/index"
+  }
+  
+}

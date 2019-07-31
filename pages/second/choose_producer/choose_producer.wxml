@@ -1,0 +1,32 @@
+<!--pages/second/choose_producer/choose_producer.wxml-->
+<bar class="search fixed" style="top:0px;">
+    <view class="serach-form round">
+        <input bindblur="complete" bindconfirm="complete" confirmType="search" placeholder="输入客户姓名 进行搜索" style="padding-left:20px" type="text"></input>
+    </view>
+    <view class="action">
+        <button bindtap="goto_add" class="gradual-green shadow-blur round">添加</button>
+    </view>
+</bar>
+<view class="no-data" wx:if="{{isEmpty}}">
+    <image src="/images/common/no-data.png"></image>
+    <text>暂无数据</text>
+</view>
+<view style="margin-top:50px" wx:else>
+    <scroll-view scrollY class="indexes" enableBackToTop="true" scrollIntoView="indexes-{{listCurID}}" scrollWithAnimation="true" style="height:calc(100vh  - 50px)">
+        <list bindtap="getdetail" class="menu menu-avatar no-padding" data-id="{{item.objectId}}" wx:for="{{producers}}" wx:key="{{index}}">
+            <item>
+                <avatar class="round lg">{{item.producer_type}}</avatar>
+                <view class="content">
+                    <view class="text-grey">{{item.producer_name}}</view>
+                    <view class="text-gray text-sm" wx:if="{{item.producer_phone==''}}">
+            联系电话：未填写
+          </view>
+                    <view class="text-gray text-sm" wx:else>
+            联系电话：{{item.producer_phone}}
+          </view>
+                </view>
+            </item>
+        </list>
+    </scroll-view>
+</view>
+

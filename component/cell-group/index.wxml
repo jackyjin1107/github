@@ -1,0 +1,3 @@
+<scroll-view class="i-class i-cell-group" scroll-y='true' bindscrolltolower='loadmore' lower-threshold="20">
+    <slot></slot>
+</scroll-view>

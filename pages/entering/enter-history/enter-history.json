@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "产品入库记录",
+  "usingComponents": {
+    "i-card": "../../../component/card/index",
+    "i-panel": "../../../component/panel/index",
+    "i-input-number": "../../../component/input-number/index",
+    "i-icon": "../../../component/icon/index",
+    "i-message": "../../../component/message/index",
+    "i-input": "../../../component/input/index"
+  }
+}

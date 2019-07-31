@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "选择供货商",
+    "usingComponents": {
+        "i-tab": "/component/tab/index",
+        "i-notice-bar": "/component/notice-bar/index",
+        "i-card": "/component/card/index",
+        "i-col": "/component/col/index",
+        "i-grid-icon": "/component/grid-icon/index",
+        "i-grid": "/component/grid/index",
+        "i-grid-item": "/component/grid-item/index",
+        "i-row": "/component/row/index",
+        "i-icon": "/component/icon/index",
+        "i-grid-label": "/component/grid-label/index",
+        "i-spin": "/component/spin/index",
+        "i-tabs": "/component/tabs/index"
+    }
+}

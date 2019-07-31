@@ -1,0 +1,9 @@
+<!--pages/mine/about-us/about-us.wxml-->
+<text class="desc">
+	「物流系统」是一款免费的物流管理小程序，旨在“为你的企业提高工作效率”
+</text>
+<view class="copyright">
+<view><text>Copyright © jlp All Rights Reserved</text></view>
+<text>联系方式:微信&QQ➭testmai_9@126.com</text>
+</view>
+

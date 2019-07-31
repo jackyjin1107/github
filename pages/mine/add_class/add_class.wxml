@@ -1,0 +1,54 @@
+<view class="all_list_view">
+    <view class="no-data" wx:if="{{isEmpty}}">
+        <image src="/images/common/no-data.png"></image>
+        <text>暂无数据</text>
+    </view>
+    <view class="all_class_text" wx:else>
+        <view class="notice_text">我的分类：</view>
+        <view class="class_content">
+            <view class="left_content" wx:if="{{type}}">
+                <view catchtap="selected_this_one" class="class_text {{selected_id==item.objectId?'selected_one':''}}" data-id="{{item.objectId}}" wx:for="{{class_text}}" wx:key="{{index}}">
+                    <view>{{item.class_text}}</view>
+                    <view catchtap="show_operation" data-dbname="class_user" data-id="{{item.objectId}}" data-value="{{item.class_text}}">
+                        <i-icon color="{{selected_id==item.objectId?'#fff':'#80848f'}}" size="18" type="brush"></i-icon>
+                    </view>
+                </view>
+            </view>
+            <view class="left_content" wx:else>
+                <view catchtap="selected_this_one" class="class_text {{selected_id==item.objectId?'selected_one':''}}" data-id="{{item.objectId}}" wx:for="{{class_text}}" wx:key="{{index}}">
+                    <view>{{item.class_text}}</view>
+                    <view catchtap="goto_goods" data-classtype="1" data-id="{{item.objectId}}" data-item="{{item}}">
+                        <text style="color:#fff">选择</text>
+                    </view>
+                </view>
+            </view>
+            <view class="right_content" wx:if="{{type}}">
+                <view catchtap="add_secclass" class="right_add display_flex">
+                    <i-icon color="#80848f" size="16" type="add"></i-icon>添加二级分类</view>
+                <view class="class_text" data-id="{{item.objectId}}" wx:for="{{second_class}}" wx:key="{{index}}">
+                    <view>{{item.class_text}}</view>
+                    <view catchtap="show_operation" data-dbname="second_class" data-id="{{item.objectId}}" data-value="{{item.class_text}}">
+                        <i-icon color="#80848f" size="18" type="brush"></i-icon>
+                    </view>
+                </view>
+            </view>
+            <view class="right_content" wx:else>
+                <view catchtap="add_secclass" class="right_add display_flex">
+                    <i-icon color="#80848f" size="16" type="add"></i-icon>添加二级分类</view>
+                <view bindtap="goto_goods" class="class_text" data-classtype="2" data-id="{{item.objectId}}" data-item="{{item}}" wx:for="{{second_class}}" wx:key="{{index}}">
+                    <view>{{item.class_text}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="add_class" class="add_class">添加一级分类</view>
+<i-modal bind:cancel="handleClose" bind:ok="getclass_text_confrim" title="产品分类" visible="{{visible}}">
+    <i-input bind:change="getclass_text" maxlength="10" placeholder="请输入产品类别"></i-input>
+</i-modal>
+<i-modal bind:cancel="handleClose" bind:ok="getclass_text_confrim_second" title="产品二级分类" visible="{{true}}" wx:if="{{one_click}}">
+    <i-input bind:change="getclass_secondtext" maxlength="10" placeholder="请输入二级类别"></i-input>
+</i-modal>
+<i-modal bind:cancel="handleClose" bind:ok="getclass_text_edit" title="产品分类" visible="{{edit_visible}}">
+    <i-input bind:change="editclass_text" maxlength="10" value="{{get_class_text}}"></i-input>
+</i-modal>

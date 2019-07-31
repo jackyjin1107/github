@@ -1,0 +1,54 @@
+.fristcontent
+{
+  display:flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  color:#f76a24;
+  background-color:#fefcec;
+}
+
+.frist_content
+{
+  display: flex;
+  justify-content: space-between
+}
+.second_content
+{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.text_desicbe
+{
+  padding: 10px 15px;
+  color: #1c2438;
+}
+.text_color
+{
+  color: #999;
+}
+.all_list
+{
+  max-height: calc(100vh - 114px);
+  overflow: scroll;
+}
+.list_item
+{
+  padding: 5px 15px 5px;
+  background: #fff;
+  border-bottom: 1px solid#ddd;
+}
+.list_style
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.color1
+{
+  color: #f30;
+}
+.color2
+{
+  color: #2ca879;
+}

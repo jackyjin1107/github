@@ -1,0 +1,24 @@
+<!--pages/friends/enter-history-fri/enter-history-fri.wxml-->
+<view class="page">
+<text>this is friends page</text>
+    <view style="line-height:35px;padding: 0 10px;">已选产品</view>
+    <view style="max-height:30vh;overflow-x:scroll">
+        <view class="pro_listitem" wx:for="{{goods}}" wx:key="{{index}}">
+            <view class="pro_list" style="color:#000">
+                <view>产品：{{item.goodsName}}</view>
+                <view>零售价：￥{{item.retailPrice}}</view>
+            </view>
+            <view class="pro_list">
+                <view>实际进货价：￥{{item.modify_retailcostPrice}}（X{{item.num}}）</view>
+                <view>总进货价：￥{{item.total_money}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="pro_allmoney">总计：￥{{all_money}}</view>
+    <view style="margin-top:20px">
+        <textarea bindinput="input_beizhu" class="beizhu_style" placeholder="请输入备注"></textarea>
+    </view>
+    <view>
+        <button bindtap="confrim_delivery" class="confrim_button" disabled="{{button}}">确认入库</button>
+    </view>
+</view>

@@ -1,0 +1,26 @@
+<view class="goods-container">
+  <form bindsubmit="handleAddGoods">
+    <view class="content_scroll">
+      <navigator openType="navigate" url="/pages/second/choose_producer/choose_producer">
+        <i-input disabled="true" name="producer" placeholder="请输入生产厂家" title="生产厂家" value="{{producer}}"></i-input>
+      </navigator>
+      <navigator openType="navigate" url="/pages/second/choose_stock/choose_stock">
+        <i-input disabled="true" name="stock" placeholder="请选择存放仓库" title="存放仓库" value="{{stock}}"></i-input>
+      </navigator>
+      <i-panel title="产品类别（可在 我的->产品类别 里添加）">
+        <navigator hoverClass="none" openType="navigate" url="/pages/mine/add_class/add_class?type=select">
+          <i-input disabled="true" name="goodsClass" placeholder="请选择产品类别" title="产品类别" value="{{class_select_text}}"></i-input>
+        </navigator>
+      </i-panel>
+
+    </view>
+    <view class="btn-group">
+      <button class="i-btn i-btn-primary i-btn-small" formType="submit" wx:if="{{!loading}}">
+        <i-icon type="add"></i-icon> 确认新增
+      </button>
+      <i-button loading="true" size="small" type="primary" wx:if="{{loading}}">
+        上传中
+      </i-button>
+    </view>
+  </form>
+</view>

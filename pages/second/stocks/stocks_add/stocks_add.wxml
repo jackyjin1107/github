@@ -1,0 +1,30 @@
+<i-message id="message"></i-message>
+<view class="goods-container">
+    <form bindsubmit="handleAddCustoms">
+        <i-panel title="基本信息">
+            <i-input maxlength="1" name="stock_type" placeholder="必填项，随意的一个编号" title="仓库编号" value="{{stock.stock_type}}"></i-input>
+            <i-input name="stock_name" placeholder="必填项，仓库名字" title="仓库名字" value="{{stock.stock_name}}"></i-input>
+            <i-input name="stock_address" placeholder="仓库地址" title="仓库地址" value="{{stock.stock_address}}"></i-input>
+            <i-input name="stock_manage" placeholder="仓库负责人姓名" title="仓库负责人姓名" value="{{stock.stock_manage}}"></i-input>
+        </i-panel>
+        <view class="btn-group" style="margin-top:10%" wx:if="{{is_modify==false}}">
+            <button class="i-btn i-btn-primary i-btn-small" formType="submit" wx:if="{{!loading}}">
+                <i-icon type="add"></i-icon> 确认
+      </button>
+            <i-button loading="true" size="small" type="primary" wx:if="{{loading}}">
+        上传中
+      </i-button>
+        </view>
+        <view class="btn-group" style="margin-top:10%" wx:else>
+            <button class="i-btn i-btn-primary i-btn-small" formType="submit" wx:if="{{!loading}}">
+                <i-icon type="add"></i-icon> 修改
+      </button>
+            <button bindtap="_delete" class="i-btn i-btn-error i-btn-small" wx:if="{{!loading}}">
+                <i-icon type="warning"></i-icon> 删除
+      </button>
+            <i-button loading="true" size="small" type="primary" wx:if="{{loading}}">
+        上传中
+      </i-button>
+        </view>
+    </form>
+</view>

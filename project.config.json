@@ -1,0 +1,153 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.5",
+	"appid": "wxaefda30e9d066973",
+	"projectname": "miniprogram-test-11",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 14,
+			"list": [
+				{
+					"id": 2,
+					"name": "entering",
+					"pathName": "pages/entering/entering",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "add_class",
+					"pathName": "pages/mine/add_class/add_class",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "delivery-history",
+					"pathName": "pages/delivery/delivery-history/delivery-history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "delivery",
+					"pathName": "pages/delivery/delivery",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "goodsadd",
+					"pathName": "pages/goods/goods-add/goods-add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "download",
+					"pathName": "pages/mine/download/download",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "enter-history",
+					"pathName": "pages/entering/enter-history/enter-history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "bad_history",
+					"pathName": "pages/goods/bad_history/bad_history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "counting_history",
+					"pathName": "pages/goods/counting_history/counting_history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "add_class",
+					"pathName": "pages/mine/add_class/add_class",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "goods",
+					"pathName": "pages/goods/goods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "goods",
+					"pathName": "pages/goods/goods",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

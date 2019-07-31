@@ -1,0 +1,80 @@
+/* pages/home/index/index.wxss */
+.swiper
+{
+  background: #426ab3;
+  color: #fff;
+  height: 20vh;
+}
+.item
+{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.every_item
+{
+  width: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+}
+.s_num
+{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.o_list
+{
+  background: #fff;
+  padding: 15px 15px 0;
+}
+.o_image
+{
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+  border: 3px solid#e2e2e2;
+  padding: 3px 3px 0;
+}
+.o_item
+{
+  width: 25%;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.o_text
+{
+  color: #000;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.scan_code
+{
+  position: fixed;
+  width: calc(100% - 30px);
+  left: 15px;
+  right: 15px;
+  bottom: 10%;
+  background: linear-gradient(to right, #118fff , #11c4ff);
+  line-height: 40px;
+  text-align: center;
+  border-radius: 4px;
+  color: #fff;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2)
+}
+.icon-scan
+{
+  margin-right: 10px;
+}
+
+.scan_notice
+{
+  width: 100%;
+  position: fixed;
+  bottom: 5%;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+}
